@@ -8,4 +8,10 @@ class CounterCubit extends Cubit<int> {
 
   /// Subtract 1 from the current state.
   void decrement() => emit(state - 1);
+
+  @override
+  void onChange(Change<int> change) {
+    print('inner $change');
+    super.onChange(change);
+  }
 }
